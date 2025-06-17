@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header'
 import 'katex/dist/katex.min.css'
 import { ThemeProvider } from '../components/ThemeContext'
 import React from 'react'
-import Footer from '../components/Footer'
+import SearchModalProvider from '../components/SearchModalProvider'
+import { getAllArticles } from '@/lib/markdown'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +19,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const articles = getAllArticles();
   return (
     <html lang="en">
       <head>
@@ -27,11 +28,11 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <ThemeProvider>
-          {/* <Header /> Removed to avoid duplicate header */}
-          <main className="flex-1 max-w-[250rem] mx-auto px-6">
-            {children}
-          </main>
-          <Footer />
+          <SearchModalProvider articles={articles}>
+            <main className="flex-1 max-w-[250rem] mx-auto px-6">
+              {children}
+            </main>
+          </SearchModalProvider>
         </ThemeProvider>
       </body>
     </html>

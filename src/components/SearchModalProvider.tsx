@@ -1,57 +1,41 @@
 "use client";
-import React, { useState, useMemo, useRef, cloneElement, isValidElement } from 'react';
+import React, { useState, useRef } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import ArticleList from './ArticleList';
+import { usePathname } from 'next/navigation';
 
 // Dummy data for tags and categories (replace with real data as needed)
-const tagsList = ["All Tags", "Blockchain", "AI", "Security"];
-const categoriesList = ["All Categories", "Research", "Development", "Tutorial"];
+const tags = ["All Tags", "Blockchain", "AI", "Security"];
+const categories = ["All Categories", "Research", "Development", "Tutorial"];
 
-export default function FilterModalManager({ children }: { children: React.ReactNode }) {
+export default function SearchModalProvider({ children, articles }: { children: React.ReactNode, articles?: any[] }) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
-  // Memoize tag/category options for performance (replace with real logic)
-  const tags = useMemo(() => tagsList, []);
-  const categories = useMemo(() => categoriesList, []);
-
-  // Focus input when modal opens
   React.useEffect(() => {
     if (isModalOpen && inputRef.current) {
       inputRef.current.focus();
     }
   }, [isModalOpen]);
 
-  // Handler for search input
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
-    // Live filtering: update state here, pass to children as needed
   };
-
-  // Handler for Enter key
   const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       setModalOpen(false);
     }
   };
 
-  // Inject filter props into ArticleList children
-  const childrenWithProps = React.Children.map(children, child => {
-    if (isValidElement(child)) {
-      return cloneElement(child, {
-        // @ts-expect-error: search is not a valid prop for the child
-        search,
-        selectedTag,
-        selectedCategory,
-      });
-    }
-    return child;
-  });
-
   return (
     <>
-      {/* <Header onOpenFilterModal={() => setModalOpen(true)} /> Removed to avoid duplicate header */}
+      <Header onOpenFilterModal={() => setModalOpen(true)} />
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex justify-center items-start pt-12 bg-black bg-opacity-50 backdrop-blur-md transition-opacity duration-300">
           <div className="relative bg-black rounded-2xl shadow-2xl w-full max-w-2xl p-0 overflow-hidden transition-all duration-300">
@@ -62,7 +46,6 @@ export default function FilterModalManager({ children }: { children: React.React
             >
               &times;
             </button>
-            {/* Search input with icon */}
             <div className="flex items-center px-6 pt-6 pb-2 bg-black rounded-t-2xl">
               <svg className="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
@@ -78,7 +61,6 @@ export default function FilterModalManager({ children }: { children: React.React
                 style={{ border: 'none' }}
               />
             </div>
-            {/* Hint row */}
             <div className="flex items-center gap-2 px-6 py-2 bg-[#181c23] text-gray-400 text-sm rounded-b-2xl border-t border-gray-800">
               <span>Type</span>
               <kbd className="bg-gray-800 px-2 py-1 rounded text-xs">#</kbd>
@@ -90,7 +72,6 @@ export default function FilterModalManager({ children }: { children: React.React
               <kbd className="bg-gray-800 px-2 py-1 rounded text-xs">/</kbd>
               <span>for pages.</span>
             </div>
-            {/* Controls for tag and category (optional, can be moved to advanced filter) */}
             <div className="flex flex-col md:flex-row gap-6 px-6 py-6 bg-black">
               <select
                 value={selectedTag}
@@ -126,7 +107,19 @@ export default function FilterModalManager({ children }: { children: React.React
           </div>
         </div>
       )}
-      {childrenWithProps}
+      <main className="flex-1 max-w-[250rem] mx-auto px-6">
+        {isHome && articles ? (
+          <ArticleList
+            articles={articles}
+            search={search}
+            selectedTag={selectedTag}
+            selectedCategory={selectedCategory}
+          />
+        ) : (
+          children
+        )}
+      </main>
+      <Footer />
     </>
   );
 } 
