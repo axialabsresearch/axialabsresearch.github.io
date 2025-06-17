@@ -1,5 +1,5 @@
 // src/app/article/[slug]/page.tsx
-import { getArticleBySlug } from '@/lib/markdown'
+import { getArticleBySlug, getAllArticles } from '@/lib/markdown'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 
@@ -62,4 +62,9 @@ export default async function ArticlePage({ params }: PageProps) {
       </div>
     </article>
   )
+}
+
+export async function generateStaticParams() {
+  const articles = getAllArticles();
+  return articles.map(article => ({ slug: article.slug }));
 }

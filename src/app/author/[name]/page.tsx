@@ -86,3 +86,10 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
     </div>
   )
 }
+
+export async function generateStaticParams() {
+  const articles = getAllArticles();
+  // Get unique author slugs
+  const authorSlugs = Array.from(new Set(articles.map(article => article.author.toLowerCase().replace(/\s+/g, '-'))));
+  return authorSlugs.map(slug => ({ name: slug }));
+}
