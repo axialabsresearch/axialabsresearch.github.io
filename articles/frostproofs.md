@@ -8,5 +8,9 @@ category: "Research"
 image: "/articles/apk-proofs-cover.jpg"
 ---
 
+$$
+\text{Accept}_{C_j}(M) \iff V_j(\pi_M) = 1
+$$
+
 
 ![Diagram](/articles/apk-proofs-diagram.png) 
