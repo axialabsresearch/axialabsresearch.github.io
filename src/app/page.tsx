@@ -1,5 +1,5 @@
 import { getAllArticles } from '@/lib/markdown'
-import ArticleList from '/home/tnxl/frostgate/axialabsresearch.github.io/src/components/ArticleList'
+import ArticleList from '../components/ArticleList'
 
 export default function Home() {
   const articles = getAllArticles()
