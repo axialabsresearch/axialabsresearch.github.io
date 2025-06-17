@@ -27,7 +27,7 @@ export default function Header({ onOpenFilterModal }: { onOpenFilterModal?: () =
   }, [theme]);
 
   return (
-    <header className="mb-8">
+    <header className="sticky top-0 z-50 bg-black/80 backdrop-blur-md mb-8">
       {/* <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between"> */}
       <div className="max-w-[70rem] mx-auto px-6 py-6 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
