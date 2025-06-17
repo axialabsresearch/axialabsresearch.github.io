@@ -38,7 +38,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <div className="w-8 h-8 bg-gray-600 rounded-full mr-3"></div>
           <Link 
             href={`/author/${article.author.toLowerCase().replace(/\s+/g, '-')}`}
-            className="text-gray-300 hover:text-white transition-colors"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
           >
             {article.author}
           </Link>

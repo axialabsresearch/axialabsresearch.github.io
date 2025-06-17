@@ -53,7 +53,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
       <div className="flex items-center mb-4">
         <div className="w-6 h-6 bg-gray-600 rounded-full mr-2"></div>
         <Link 
-          href={`/author/${article.author.toLowerCase().replace(' ', '-')}`}
+          href={`/author/${article.author.toLowerCase().replace(/\s+/g, '-')}`}
           className="text-sm text-gray-300 hover:text-white transition-colors"
         >
           {article.author}
