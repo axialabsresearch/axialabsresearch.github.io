@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## How to update favicon and main icon
+
+1. Move `icon.png` to the `public/` directory:
+   ```bash
+   mv icon.png public/icon.png
+   ```
+2. Update `src/app/layout.tsx` to include the following in the `<head>` section:
+   ```tsx
+   <head>
+     <link rel="icon" href="/icon.png" type="image/png" />
+     <link rel="apple-touch-icon" href="/icon.png" />
+   </head>
+   ```
+   Place this above the `<body>` tag in the returned JSX.

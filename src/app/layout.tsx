@@ -18,6 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="./icon.jpg" type="image/jpg" />
+        <link rel="apple-touch-icon" href="./icon.jpg" />
+      </head>
       <body className={`${inter.className} min-h-screen`}>
         <Header />
         <main className="max-w-4xl mx-auto px-6">
