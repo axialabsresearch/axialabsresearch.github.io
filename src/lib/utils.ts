@@ -1,3 +1,4 @@
+console.log('utils.ts file loaded')
 export function formatDate(dateString: string): string {
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',

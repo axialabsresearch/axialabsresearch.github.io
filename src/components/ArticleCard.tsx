@@ -1,6 +1,14 @@
-import * as utils from '../lib/utils'
 import Link from 'next/link'
-import { formatDate } from '/home/tnxl/frostgate/axialabsresearch.github.io/src/lib/utils' 
+
+// Define formatDate directly in this component
+function formatDate(dateString: string): string {
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }
+  return new Date(dateString).toLocaleDateString('en-US', options)
+}
 
 // Add this line right after the import
 console.log('formatDate:', formatDate)
