@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import 'katex/dist/katex.min.css'
 import { ThemeProvider } from '../components/ThemeContext'
 import React from 'react'
+import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,15 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="icon" href="/icon.jpg" type="image/jpg" />
+        <link rel="apple-touch-icon" href="/icon.jpg" />
       </head>
-      <body className={`${inter.className} min-h-screen`}>
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
         <ThemeProvider>
           {/* <Header /> Removed to avoid duplicate header */}
-          <main className="max-w-[250rem] mx-auto px-6">
+          <main className="flex-1 max-w-[250rem] mx-auto px-6">
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

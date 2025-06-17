@@ -33,6 +33,7 @@ export default async function ArticlePage({ params }: PageProps) {
         </div>
         
         <h1 className="text-6xl font-bold mb-4">{article.title}</h1>
+        <p className="text-gray-400 text-xl mb-6">{article.description}</p>
         
         <div className="flex items-center mb-8">
           <div className="w-8 h-8 bg-gray-600 rounded-full mr-3"></div>
