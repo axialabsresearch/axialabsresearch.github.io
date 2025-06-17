@@ -26,7 +26,7 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   return (
-    <article className="py-12 max-w-4xl mx-auto px-4">
+    <article className="py-12 max-w-[70rem] mx-auto px-4">
       <div className="mb-8">
         <div className="flex items-center text-sm text-gray-500 mb-4">
           <time>{formatDate(article.date)}</time>

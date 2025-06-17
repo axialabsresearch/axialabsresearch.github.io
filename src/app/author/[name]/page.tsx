@@ -47,7 +47,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
   }
 
   return (
-    <div className="py-12 max-w-4xl mx-auto px-4">
+    <div className="py-12 max-w-[70rem] mx-auto px-4">
       <div className="mb-12 flex flex-col sm:flex-row items-center gap-6">
         {authorProfile.avatar && (
           <Image src={authorProfile.avatar} alt={authorName} width={64} height={64} className="w-16 h-16 rounded-full object-cover" />
