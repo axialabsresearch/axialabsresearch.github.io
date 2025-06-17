@@ -32,7 +32,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <time>{formatDate(article.date)}</time>
         </div>
         
-        <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
+        <h1 className="text-6xl font-bold mb-4">{article.title}</h1>
         
         <div className="flex items-center mb-8">
           <div className="w-8 h-8 bg-gray-600 rounded-full mr-3"></div>

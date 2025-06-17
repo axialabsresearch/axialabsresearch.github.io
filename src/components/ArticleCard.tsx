@@ -41,7 +41,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
       {article.image && (
         <img src={article.image} alt={article.title} className="w-full h-48 object-cover rounded mb-4" />
       )}
-      <h2 className="text-2xl font-bold mb-2">
+      <h2 className="text-3xl font-bold mb-2">
         <Link 
           href={`/article/${article.slug}`}
           className="hover:text-gray-300 transition-colors"

@@ -7,8 +7,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      maxWidth: {
+        '10xl': '120rem', // 1408px, for example
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };
+
 export default config;
