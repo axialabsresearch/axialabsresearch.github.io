@@ -6,7 +6,7 @@ export default function AuthorNotFound() {
     <div className="py-12 max-w-4xl mx-auto px-4 text-center">
       <h1 className="text-4xl font-bold mb-4">Author Not Found</h1>
       <p className="text-gray-400 text-lg mb-8">
-        The author you're looking for doesn't exist or has no published articles.
+        The author you&apos;re looking for doesn&apos;t exist or has no published articles.
       </p>
       <Link 
         href="/"

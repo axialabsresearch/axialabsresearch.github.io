@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { remark } from 'remark'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import rehypeStringify from 'rehype-stringify'

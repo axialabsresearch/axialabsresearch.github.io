@@ -2,14 +2,14 @@
 import React, { useState, useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import ArticleList from './ArticleList';
+import ArticleList, { Article } from './ArticleList';
 import { usePathname } from 'next/navigation';
 
 // Dummy data for tags and categories (replace with real data as needed)
 const tags = ["All Tags", "Blockchain", "AI", "Security"];
 const categories = ["All Categories", "Research", "Development", "Tutorial"];
 
-export default function SearchModalProvider({ children, articles }: { children: React.ReactNode, articles?: any[] }) {
+export default function SearchModalProvider({ children, articles }: { children: React.ReactNode, articles?: Article[] }) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState("");

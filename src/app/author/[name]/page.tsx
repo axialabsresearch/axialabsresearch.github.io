@@ -17,14 +17,12 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
   const authorSlug = name.toLowerCase();
   const authorFile = path.join(process.cwd(), 'author', `${authorSlug}.md`);
   let authorProfile = null;
-  let authorContent = '';
 
   try {
     const fileContent = await fs.readFile(authorFile, 'utf8');
-    const { data, content } = matter(fileContent);
+    const { data } = matter(fileContent);
     authorProfile = data;
-    authorContent = content;
-  } catch (e) {
+  } catch {
     authorProfile = { name: authorSlug.replace(/-/g, ' ') };
   }
 

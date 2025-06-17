@@ -1,5 +1,4 @@
 "use client";
-import { useState } from 'react'
 import ArticleCard from './ArticleCard'
 
 export interface Article {
@@ -21,10 +20,6 @@ interface ArticleListProps {
 }
 
 export default function ArticleList({ articles, search = '', selectedTag = '', selectedCategory = '' }: ArticleListProps) {
-  // Collect all unique tags and categories
-  const tags = Array.from(new Set(articles.flatMap((a: Article) => a.tags || [])))
-  const categories = Array.from(new Set(articles.map((a: Article) => a.category).filter(Boolean))) as string[]
-
   // Filter articles by search, tag, and category
   const filtered = articles.filter((article: Article) => {
     const matchesSearch =
