@@ -26,14 +26,14 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   return (
-    <article className="py-12 max-w-[70rem] mx-auto px-4">
+    <article className="py-6 sm:py-12 max-w-[70rem] mx-auto px-4 sm:px-6">
       <div className="mb-8">
         <div className="flex items-center text-sm text-gray-500 mb-4">
           <time>{formatDate(article.date)}</time>
         </div>
         
-        <h1 className="text-6xl font-bold mb-4">{article.title}</h1>
-        <p className="text-gray-400 text-xl mb-6">{article.description}</p>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">{article.title}</h1>
+        <p className="text-gray-400 text-base sm:text-lg md:text-xl mb-6">{article.description}</p>
         
         <div className="flex items-center mb-8">
           <div className="w-8 h-8 bg-gray-600 rounded-full mr-3"></div>
@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: PageProps) {
       </div>
       
       <div 
-        className="prose prose-invert prose-lg max-w-none"
+        className="prose prose-invert prose-sm sm:prose-base md:prose-lg max-w-none overflow-hidden"
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
       
