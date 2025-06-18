@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: '5aN1DBbveXxXLOK0Q60vRvbNV-6V3oUM8zuHk13EAvg',
+    google: 'BfQ7ZlFVrCtP2qgOlwdYk_H0coaj9qL9UkNSeytWPxc',
   },
 }
 
@@ -80,6 +80,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon.jpg" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
+        <meta name="google-site-verification" content="BfQ7ZlFVrCtP2qgOlwdYk_H0coaj9qL9UkNSeytWPxc" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
