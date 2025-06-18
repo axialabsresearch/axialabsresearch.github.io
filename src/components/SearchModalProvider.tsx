@@ -15,6 +15,7 @@ export default function SearchModalProvider({ children, articles }: { children: 
   const [selectedTag, setSelectedTag] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isHome = pathname === '/';
 
@@ -22,6 +23,22 @@ export default function SearchModalProvider({ children, articles }: { children: 
     if (isModalOpen && inputRef.current) {
       inputRef.current.focus();
     }
+  }, [isModalOpen]);
+
+  // Add click outside handler
+  React.useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setModalOpen(false);
+      }
+    }
+
+    if (isModalOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, [isModalOpen]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +55,7 @@ export default function SearchModalProvider({ children, articles }: { children: 
       <Header onOpenFilterModal={() => setModalOpen(true)} />
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex justify-center items-start pt-12 bg-black bg-opacity-50 backdrop-blur-md transition-opacity duration-300">
-          <div className="relative bg-black rounded-2xl shadow-2xl w-full max-w-md p-0 overflow-hidden transition-all duration-300">
+          <div ref={modalRef} className="relative bg-black rounded-2xl shadow-2xl w-full max-w-md p-0 overflow-hidden transition-all duration-300">
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl z-10"
               onClick={() => setModalOpen(false)}
@@ -65,7 +82,7 @@ export default function SearchModalProvider({ children, articles }: { children: 
               <select
                 value={selectedTag}
                 onChange={e => setSelectedTag(e.target.value)}
-                className="flex-1 bg-gray-900 text-white text-lg px-4 py-3 rounded-lg border-none outline-none appearance-none shadow focus:ring-2 focus:ring-gray-700 transition-all duration-200"
+                className="flex-1 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg border-none outline-none appearance-none shadow focus:ring-2 focus:ring-gray-700 transition-all duration-200"
               >
                 {tags.map(tag => (
                   <option
@@ -80,7 +97,7 @@ export default function SearchModalProvider({ children, articles }: { children: 
               <select
                 value={selectedCategory}
                 onChange={e => setSelectedCategory(e.target.value)}
-                className="flex-1 bg-gray-900 text-white text-lg px-4 py-3 rounded-lg border-none outline-none appearance-none shadow focus:ring-2 focus:ring-gray-700 transition-all duration-200"
+                className="flex-1 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg border-none outline-none appearance-none shadow focus:ring-2 focus:ring-gray-700 transition-all duration-200"
               >
                 {categories.map(cat => (
                   <option
