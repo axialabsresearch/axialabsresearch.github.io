@@ -32,7 +32,7 @@ export default function Header({ onOpenFilterModal }: { onOpenFilterModal?: () =
       <div className="max-w-[70rem] mx-auto px-6 py-6 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
         <div className="w-12 h-12 flex items-center justify-center">
-            <img src="./icon.jpg" alt="Site Icon" className="w-8 h-8" />
+            <img src="/icon.jpg" alt="Site Icon" className="w-8 h-8" />
           </div>
         </Link>
         <div className="flex items-center space-x-2">

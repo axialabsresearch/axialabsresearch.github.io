@@ -17,9 +17,10 @@ interface ArticleListProps {
   search?: string
   selectedTag?: string
   selectedCategory?: string
+  authorAvatars?: Record<string, string>
 }
 
-export default function ArticleList({ articles, search = '', selectedTag = '', selectedCategory = '' }: ArticleListProps) {
+export default function ArticleList({ articles, search = '', selectedTag = '', selectedCategory = '', authorAvatars = {} }: ArticleListProps) {
   // Filter articles by search, tag, and category
   const filtered = articles.filter((article: Article) => {
     const matchesSearch =
@@ -32,16 +33,20 @@ export default function ArticleList({ articles, search = '', selectedTag = '', s
   })
 
   return (
-    <div className="py-12 max-w-[70rem] mx-auto px-4">
-      <div className="mb-12">
-        <h1 className="text-7xl font-bold mb-4">Axia Labs Research</h1>
-        <p className="text-gray-400 text-xl mb-8">
+    <div className="py-6 sm:py-12 max-w-[70rem] mx-auto px-4 sm:px-6">
+      <div className="mb-8 sm:mb-12">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">Axia Labs Research</h1>
+        <p className="text-gray-400 text-lg sm:text-xl mb-6 sm:mb-8">
           Blockchain Research and Development Lab.
         </p>
       </div>
-      <div className="space-y-14">
+      <div className="space-y-10 sm:space-y-14">
         {filtered.map((article: Article) => (
-          <ArticleCard key={article.slug} article={article} />
+          <ArticleCard 
+            key={article.slug} 
+            article={article} 
+            authorAvatar={authorAvatars[article.author]}
+          />
         ))}
         {filtered.length === 0 && (
           <div className="text-gray-400">No articles found.</div>
