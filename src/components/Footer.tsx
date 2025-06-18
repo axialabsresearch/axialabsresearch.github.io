@@ -4,6 +4,7 @@ import { useTheme } from '@/components/ThemeContext'
 
 export default function Footer() {
   const { theme } = useTheme();
+  const iconSrc = theme === 'dark' ? '/icon.jpg' : '/icon-dark.jpg';
 
   return (
     <footer className={`w-full backdrop-blur-md py-4 sm:py-6 px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2 mt-12 ${
@@ -12,7 +13,7 @@ export default function Footer() {
       {/* Logo */}
       <div className="flex items-center space-x-2 order-1 md:order-none">
         <Image 
-          src="/icon.jpg" 
+          src={iconSrc} 
           alt="Axia Labs Logo" 
           width={28} 
           height={28} 

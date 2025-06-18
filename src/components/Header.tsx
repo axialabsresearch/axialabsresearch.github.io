@@ -15,6 +15,8 @@ export default function Header({ onOpenFilterModal }: { onOpenFilterModal?: () =
     }
   }, [theme]);
 
+  const iconSrc = theme === 'dark' ? '/icon.jpg' : '/icon-dark.jpg';
+
   return (
     <header className={`sticky top-0 z-50 backdrop-blur-md mb-8 ${theme === 'dark' ? 'bg-black/80' : 'bg-white/80 border-b border-gray-200'}`}>
       {/* <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between"> */}
@@ -22,7 +24,7 @@ export default function Header({ onOpenFilterModal }: { onOpenFilterModal?: () =
         <Link href="/" className="flex items-center space-x-2">
         <div className="w-12 h-12 flex items-center justify-center">
             <Image 
-              src="/icon.jpg" 
+              src={iconSrc} 
               alt="Site Icon" 
               width={32} 
               height={32} 
