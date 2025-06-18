@@ -33,7 +33,7 @@ export default function ArticleList({ articles, search = '', selectedTag = '', s
   })
 
   return (
-    <div className="py-6 sm:py-12 max-w-[70rem] mx-auto px-4 sm:px-6">
+    <div className="py-6 sm:py-12 max-w-[70rem] mx-auto">
       <div className="mb-8 sm:mb-12">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">Axia Labs Research</h1>
         <p className="text-gray-400 text-lg sm:text-xl mb-6 sm:mb-8">

@@ -62,7 +62,7 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   return (
-    <article className="py-6 sm:py-12 max-w-[70rem] mx-auto px-4 sm:px-6">
+    <article className="py-6 sm:py-12 max-w-[70rem] mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

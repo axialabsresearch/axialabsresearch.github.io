@@ -101,7 +101,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <ThemeProvider>
           <SearchModalProvider articles={articles}>
-            <main className="flex-1 max-w-[250rem] mx-auto px-6">
+            <main className="flex-1 max-w-[70rem] mx-auto px-6">
               {children}
             </main>
           </SearchModalProvider>
