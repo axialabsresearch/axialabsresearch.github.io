@@ -113,7 +113,7 @@ export default function SearchModalProvider({ children, articles }: { children: 
           </div>
         </div>
       )}
-      <main className="flex-1 max-w-[250rem] mx-auto px-6">
+      <main className="flex-1 max-w-[70rem] mx-auto px-6">
         {isHome && articles ? (
           <ArticleList
             articles={articles}

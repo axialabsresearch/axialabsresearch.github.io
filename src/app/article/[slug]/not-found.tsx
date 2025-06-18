@@ -1,7 +1,6 @@
-// src/app/author/[name]/not-found.tsx
 import Link from 'next/link'
 
-export default function AuthorNotFound() {
+export default function ArticleNotFound() {
   return (
     <div className="py-12 max-w-[70rem] mx-auto px-6 text-center">
       {/* Simple animated graphic */}
@@ -22,56 +21,52 @@ export default function AuthorNotFound() {
             className="animate-pulse text-gray-300 dark:text-gray-600"
           />
           
-          {/* Person icon */}
-          <circle 
-            cx="100" 
-            cy="70" 
-            r="20" 
+          {/* Question mark */}
+          <text 
+            x="100" 
+            y="120" 
+            textAnchor="middle" 
+            fontSize="60" 
+            fontWeight="bold"
             className="animate-bounce fill-gray-600 dark:fill-gray-400"
-          />
-          <path 
-            d="M 60 140 Q 100 100 140 140" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="8" 
-            strokeLinecap="round"
-            className="animate-pulse text-gray-600 dark:text-gray-400"
-          />
+          >
+            ?
+          </text>
           
           {/* Simple floating dots */}
           <circle 
-            cx="30" 
-            cy="50" 
+            cx="40" 
+            cy="60" 
             r="3" 
             className="animate-ping fill-gray-500 dark:fill-gray-500"
           />
           <circle 
-            cx="170" 
-            cy="50" 
+            cx="160" 
+            cy="60" 
             r="3" 
             className="animate-ping fill-gray-500 dark:fill-gray-500"
-            style={{ animationDelay: '0.3s' }}
+            style={{ animationDelay: '0.5s' }}
           />
           <circle 
-            cx="30" 
-            cy="150" 
+            cx="40" 
+            cy="140" 
             r="3" 
             className="animate-ping fill-gray-500 dark:fill-gray-500"
-            style={{ animationDelay: '0.6s' }}
+            style={{ animationDelay: '1s' }}
           />
           <circle 
-            cx="170" 
-            cy="150" 
+            cx="160" 
+            cy="140" 
             r="3" 
             className="animate-ping fill-gray-500 dark:fill-gray-500"
-            style={{ animationDelay: '0.9s' }}
+            style={{ animationDelay: '1.5s' }}
           />
         </svg>
       </div>
       
-      <h1 className="text-4xl font-bold mb-4">Author Not Found</h1>
+      <h1 className="text-4xl font-bold mb-4">Article Not Found</h1>
       <p className="text-lg mb-8 text-gray-600 dark:text-gray-400">
-        The author you&apos;re looking for doesn&apos;t exist or has no published articles.
+        The article you&apos;re looking for doesn&apos;t exist or has been removed.
       </p>
       <Link 
         href="/"
@@ -82,4 +77,4 @@ export default function AuthorNotFound() {
       </Link>
     </div>
   )
-}
+} 
