@@ -1,5 +1,7 @@
+"use client";
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTheme } from '@/components/ThemeContext'
 
 // Define formatDate directly in this component
 function formatDate(dateString: string): string {
@@ -28,13 +30,20 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({ article, authorAvatar }: ArticleCardProps) {
+  const { theme } = useTheme();
   
   return (
-    <article className="border-b border-gray-800 pb-6 sm:pb-8">
-      <div className="flex items-center text-sm sm:text-base text-gray-500 mb-2">
+    <article className={`border-b pb-6 sm:pb-8 ${
+      theme === 'dark' ? 'border-gray-800' : 'border-gray-200'
+    }`}>
+      <div className={`flex items-center text-sm sm:text-base mb-2 ${
+        theme === 'dark' ? 'text-gray-500' : 'text-gray-600'
+      }`}>
         <time>{formatDate(article.date)}</time>
         {article.category && (
-          <span className="ml-4 px-2 py-0.5 rounded bg-gray-700 text-xs sm:text-sm text-gray-300">{article.category}</span>
+          <span className={`ml-4 px-2 py-0.5 rounded text-xs sm:text-sm ${
+            theme === 'dark' ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'
+          }`}>{article.category}</span>
         )}
       </div>
       {article.image && (
@@ -49,7 +58,9 @@ export default function ArticleCard({ article, authorAvatar }: ArticleCardProps)
       <h2 className="text-2xl sm:text-3xl font-bold mb-2 leading-tight">
         <Link 
           href={`/article/${article.slug}`}
-          className="hover:text-gray-300 transition-colors"
+          className={`transition-colors ${
+            theme === 'dark' ? 'hover:text-gray-300' : 'hover:text-gray-600'
+          }`}
         >
           {article.title}
         </Link>
@@ -65,31 +76,41 @@ export default function ArticleCard({ article, authorAvatar }: ArticleCardProps)
             className="w-6 h-6 rounded-full object-cover mr-2" 
           />
         ) : (
-          <div className="w-6 h-6 bg-gray-600 rounded-full mr-2"></div>
+          <div className={`w-6 h-6 rounded-full mr-2 ${
+            theme === 'dark' ? 'bg-gray-600' : 'bg-gray-400'
+          }`}></div>
         )}
         <Link 
           href={`/author/${article.author.toLowerCase().replace(/\s+/g, '-')}`}
-          className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors"
+          className={`text-sm sm:text-base transition-colors ${
+            theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+          }`}
         >
           {article.author}
         </Link>
       </div>
       
-      <p className="text-gray-300 text-base sm:text-lg mb-4 leading-relaxed">
+      <p className={`text-base sm:text-lg mb-4 leading-relaxed ${
+        theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+      }`}>
         {article.description}
       </p>
       
       {article.tags && article.tags.length > 0 && (
         <div className="mb-4 flex flex-wrap gap-2">
           {article.tags.map(tag => (
-            <span key={tag} className="px-2 py-0.5 rounded bg-gray-800 text-xs sm:text-sm text-gray-400">{tag}</span>
+            <span key={tag} className={`px-2 py-0.5 rounded text-xs sm:text-sm ${
+              theme === 'dark' ? 'bg-gray-800 text-gray-400' : 'bg-gray-100 text-gray-600'
+            }`}>{tag}</span>
           ))}
         </div>
       )}
       
       <Link 
         href={`/article/${article.slug}`}
-        className="inline-flex items-center text-sm sm:text-base text-gray-300 hover:text-white transition-colors group"
+        className={`inline-flex items-center text-sm sm:text-base transition-colors group ${
+          theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+        }`}
       >
         READ MORE 
         <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>

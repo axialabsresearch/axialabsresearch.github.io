@@ -6,13 +6,23 @@
   :root {
     --background: #ffffff;
     --foreground: #000000;
+    --header-bg: rgba(0, 0, 0, 0.8);
+    --footer-bg: rgba(0, 0, 0, 0.8);
+    --text-primary: #000000;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #000000;
-      --foreground: #ffffff;
-    }
+  html.dark {
+    --background: #000000;
+    --foreground: #ededed;
+    --header-bg: rgba(0, 0, 0, 0.8);
+    --footer-bg: rgba(0, 0, 0, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --border-color: #374151;
   }
 
   html {
@@ -27,8 +37,28 @@
     font-family: Inter, sans-serif, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  html.dark {
-    --background: #000000;
-    --foreground: #ededed;
+  /* Ensure proper text colors in both modes */
+  .text-gray-400 {
+    color: var(--text-muted);
+  }
+  
+  .text-gray-500 {
+    color: var(--text-secondary);
+  }
+  
+  .text-gray-300 {
+    color: var(--text-secondary);
+  }
+  
+  .text-gray-200 {
+    color: var(--text-primary);
+  }
+  
+  .border-gray-800 {
+    border-color: var(--border-color);
+  }
+  
+  .border-gray-600 {
+    border-color: var(--border-color);
   }
 }
