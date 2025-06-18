@@ -24,7 +24,7 @@ export default function Footer() {
       <div className={`text-xs sm:text-sm text-center order-2 md:order-none ${
         theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
       }`}>
-        © 2023 Axia Labs. All Rights Reserved.
+        © 2025 Axia Labs. All Rights Reserved.
       </div>
       {/* Socials */}
       <div className="flex items-center space-x-2 order-3 md:order-none">

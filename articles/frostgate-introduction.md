@@ -1,7 +1,7 @@
 ---
 title: "Frostgate: A Modular Interoperability Protocol"
 author: "Blessed Tosin Oyinbo"
-date: "2023-12-07"
+date: "2025-12-07"
 description: "In this article, I formally present the idea of Frostgate, as a core modular protocol for verifiable interoperability between isolated state machines (sovereign chains)."
 tags: ["zk-SNARKs", "consensus", "cryptographic-proofs"]
 category: "Research"
