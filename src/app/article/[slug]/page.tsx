@@ -2,9 +2,45 @@
 import { getArticleBySlug, getAllArticles } from '@/lib/markdown'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 
 interface PageProps {
   params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params
+  const article = getArticleBySlug(slug)
+  
+  if (!article) {
+    return {
+      title: 'Article Not Found',
+      description: 'The requested article could not be found.'
+    }
+  }
+
+  return {
+    title: article.title,
+    description: article.description,
+    authors: [{ name: article.author }],
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      type: 'article',
+      publishedTime: article.date,
+      authors: [article.author],
+      images: ['/icon.jpg'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
+      images: ['/icon.jpg'],
+    },
+    alternates: {
+      canonical: `/article/${slug}`,
+    },
+  }
 }
 
 function formatDate(dateString: string): string {
@@ -27,6 +63,37 @@ export default async function ArticlePage({ params }: PageProps) {
 
   return (
     <article className="py-6 sm:py-12 max-w-[70rem] mx-auto px-4 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": article.title,
+            "description": article.description,
+            "author": {
+              "@type": "Person",
+              "name": article.author,
+              "url": `https://axialabsresearch.github.io/author/${article.author.toLowerCase().replace(/\s+/g, '-')}`
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Axia Labs Research",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://axialabsresearch.github.io/icon.jpg"
+              }
+            },
+            "datePublished": article.date,
+            "dateModified": article.date,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://axialabsresearch.github.io/article/${slug}`
+            },
+            "image": "https://axialabsresearch.github.io/icon.jpg"
+          })
+        }}
+      />
       <div className="mb-8">
         <div className="flex items-center text-sm text-gray-500 mb-4">
           <time>{formatDate(article.date)}</time>
