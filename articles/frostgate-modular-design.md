@@ -8,8 +8,6 @@ category: "Blog"
 image: ""
 ---
 
-# Frostgate: A Modular Architecture for Trustless Interoperability
-
 Frostgate proposes a new architecture for cross-chain interoperability—one that does **not** rely on light clients, centralized bridges, or multisig committees. Instead, it offers a **modular, verifiable system** for message passing across blockchains, primarily grounded in **cryptographic soundness** and **composable design**.
 
 At its core, Frostgate fuses **Succinct State Validation (SSV)**, **zero-knowledge proofs**, and **chain abstraction** into a fully programmable and extensible interoperability stack. Any chain, proving system, or application can adopt it—without compromising decentralization.

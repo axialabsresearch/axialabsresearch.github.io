@@ -1,7 +1,7 @@
 ---
 title: "A Formal Specification for Verifiable Cross-Chain State Transitions"
 author: "Blessed Tosin Oyinbo"
-date: "2025-12-07"
+date: "2025-07-07"
 description: "In this article, I formally define cross-chain interoperability as a problem of verifiable state transitions between distributed state machines, grounded in finality and succinct proofs."
 tags: ["zk-SNARKs", "consensus", "cryptographic-proofs"]
 category: "Research"
