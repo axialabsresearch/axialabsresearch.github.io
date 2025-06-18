@@ -38,7 +38,13 @@ export default function ArticleCard({ article, authorAvatar }: ArticleCardProps)
         )}
       </div>
       {article.image && (
-        <img src={article.image} alt={article.title} className="w-full h-48 object-cover rounded mb-4" />
+        <Image 
+          src={article.image} 
+          alt={article.title} 
+          width={800} 
+          height={400} 
+          className="w-full h-48 object-cover rounded mb-4" 
+        />
       )}
       <h2 className="text-2xl sm:text-3xl font-bold mb-2 leading-tight">
         <Link 

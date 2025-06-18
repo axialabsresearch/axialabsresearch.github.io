@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { getAllArticles } from '@/lib/markdown'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://axialabsresearch.github.io'
   const articles = getAllArticles()

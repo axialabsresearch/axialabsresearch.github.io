@@ -1,11 +1,18 @@
 "use client";
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer className="w-full bg-black/80 backdrop-blur-md py-4 sm:py-6 px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2 mt-12">
       {/* Logo */}
       <div className="flex items-center space-x-2 order-1 md:order-none">
-        <img src="/icon.jpg" alt="Axia Labs Logo" className="w-5 h-5 sm:w-7 sm:h-7 rounded" />
+        <Image 
+          src="/icon.jpg" 
+          alt="Axia Labs Logo" 
+          width={28} 
+          height={28} 
+          className="w-5 h-5 sm:w-7 sm:h-7 rounded" 
+        />
       </div>
       {/* Copyright */}
       <div className="text-gray-400 text-xs sm:text-sm text-center order-2 md:order-none">
