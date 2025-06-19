@@ -1,7 +1,7 @@
 ---
 title: "The Cross-Chain Trust Problem"
 author: "Blessed Tosin Oyinbo"
-date: "2025-07-14"
+date: "2025-07-06"
 description: "In this research article, I examine the fundamental security challenges facing blockchain interoperability, analyzing why existing solutions like multi-signature committees and light clients force uncomfortable trade-offs between cryptographic security and operational efficiency, establishing the theoretical foundation for why cross-chain communication remains one of the hardest problems in distributed systems."
 tags: ["interoperability", "consensus", "blockchain"]
 category: "Research Blog"

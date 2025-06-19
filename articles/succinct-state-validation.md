@@ -1,7 +1,7 @@
 ---
 title: "Succinct State Validation"
 author: "Blessed Tosin Oyinbo"
-date: "2025-07-16"
+date: "2025-07-11"
 description: "In this research article, I present Succinct State Validation (SSV), a novel cryptographic framework that leverages zero-knowledge proofs to achieve constant-cost verification of arbitrary blockchain consensus mechanisms, demonstrating how this approach resolves the verification complexity trilemma that has plagued existing cross-chain solutions."
 tags: ["interoperability", "consensus", "blockchain"]
 category: "Research Blog"

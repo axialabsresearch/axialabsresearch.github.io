@@ -1,7 +1,7 @@
 ---
 title: "Frostproofs"
 author: "Blessed Tosin Oyinbo"
-date: "2025-07-18"
+date: "2025-07-13"
 description: "In this research article, I explore Frostproofs as the first practical instantiation of Succinct State Validation, examining the circuit optimization techniques, proof system trade-offs, and engineering challenges required to translate theoretical cryptographic frameworks into production-ready cross-chain infrastructure with real-world performance characteristics."
 tags: ["interoperability", "consensus", "blockchain"]
 category: "Research Blog"
