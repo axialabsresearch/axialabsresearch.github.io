@@ -11,14 +11,14 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Axia Labs Research',
+    default: 'Axia Labs Research - Blockchain Research and Development',
     template: '%s | Axia Labs Research'
   },
-  description: 'Blockchain Research and Development Lab. Exploring cutting-edge blockchain technology, interoperability protocols, and decentralized systems.',
-  keywords: ['blockchain', 'research', 'interoperability', 'cryptography', 'defi', 'web3', 'protocols'],
-  authors: [{ name: 'Axia Labs Team' }],
-  creator: 'Axia Labs',
-  publisher: 'Axia Labs',
+  description: 'Axia Labs Research is a blockchain research and development lab exploring cutting-edge blockchain technology, interoperability protocols, and decentralized systems.',
+  keywords: ['blockchain research', 'blockchain development', 'interoperability', 'cryptography', 'defi', 'web3', 'protocols', 'axia labs'],
+  authors: [{ name: 'Axia Labs Research Team' }],
+  creator: 'Axia Labs Research',
+  publisher: 'Axia Labs Research',
   formatDetection: {
     email: false,
     address: false,
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://axialabsresearch.github.io'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://axialabsresearch.github.io',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://axialabsresearch.github.io',
-    title: 'Axia Labs Research',
-    description: 'Blockchain Research and Development Lab. Exploring cutting-edge blockchain technology, interoperability protocols, and decentralized systems.',
+    title: 'Axia Labs Research - Blockchain Research and Development',
+    description: 'Axia Labs Research is a blockchain research and development lab exploring cutting-edge blockchain technology, interoperability protocols, and decentralized systems.',
     siteName: 'Axia Labs Research',
     images: [
       {
@@ -46,10 +46,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Axia Labs Research',
-    description: 'Blockchain Research and Development Lab. Exploring cutting-edge blockchain technology, interoperability protocols, and decentralized systems.',
+    title: 'Axia Labs Research - Blockchain Research and Development',
+    description: 'Axia Labs Research is a blockchain research and development lab exploring cutting-edge blockchain technology, interoperability protocols, and decentralized systems.',
     images: ['/icon.jpg'],
     creator: '@_tnxl',
+    site: '@_tnxl',
   },
   robots: {
     index: true,
@@ -86,13 +87,20 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "ResearchOrganization",
               "name": "Axia Labs Research",
               "url": "https://axialabsresearch.github.io",
               "logo": "https://axialabsresearch.github.io/icon.jpg",
-              "description": "Blockchain Research and Development Lab",
+              "description": "Blockchain Research and Development Lab exploring cutting-edge blockchain technology and interoperability protocols",
               "sameAs": [
                 "https://twitter.com/_tnxl"
+              ],
+              "knowsAbout": [
+                "Blockchain Technology",
+                "Cryptography",
+                "Interoperability Protocols",
+                "Decentralized Systems",
+                "Web3"
               ]
             })
           }}
