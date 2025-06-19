@@ -8,6 +8,7 @@ category: "Article"
 image: ""
 ---
 
+---
 
 The promise of a multi-chain world is quite compelling: imagine specialized blockchains optimized for different use cases, all seamlessly interoperating to create richer applications than any single chain could support. From DeFi protocols that span multiple chains, to NFTs that move between ecosystems, and applications that leverage the best features of different blockchain architectures.
 

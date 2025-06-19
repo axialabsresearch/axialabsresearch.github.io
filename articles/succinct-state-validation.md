@@ -8,6 +8,8 @@ category: "Research Blog"
 image: ""
 ---
 
+---
+
 *This is Part 2 of a three-part series exploring Succinct State Validation as a cryptographic solution to cross-chain interoperability. In Part 1, we established the fundamental trust problem and examined the limitations of existing solutions. Here, we introduce the mathematical framework for Succinct State Validation and demonstrate how zero-knowledge cryptography can resolve the verification complexity trilemma.*
 
 ## From Trust Assumptions to Mathematical Proofs

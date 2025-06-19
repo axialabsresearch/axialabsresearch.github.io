@@ -8,7 +8,7 @@ category: "Research Blog"
 image: ""
 ---
 
-# Frostproofs: A Practical Implementation of Succinct State Validation
+---
 
 *This is Part 3 of a three-part series exploring Succinct State Validation as a cryptographic solution to cross-chain interoperability. In Parts 1 and 2, we established the trust problem and introduced the mathematical framework for SSV. Here, we examine Frostproofs as a concrete instantiation, exploring implementation details, performance characteristics, and real-world deployment considerations.*
 

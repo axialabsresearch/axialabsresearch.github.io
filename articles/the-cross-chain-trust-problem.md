@@ -8,6 +8,8 @@ category: "Research Blog"
 image: ""
 ---
 
+---
+
 *This is Part 1 of a three-part series exploring Succinct State Validation as a cryptographic solution to cross-chain interoperability. In this post, we establish the theoretical foundations of the trust problem and examine existing solutions through a formal security lens.*
 
 ## The Epistemic Challenge of Distributed Truth
