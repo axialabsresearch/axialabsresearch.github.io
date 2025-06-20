@@ -1,7 +1,7 @@
 ---
 title: "Inside Frostgate: How Zero-Knowledge Proofs Enable Trustless Interoperability"
 author: "Blessed Tosin Oyinbo"
-date: "2025-07-08"
+date: "2025-07-19"
 description: "In this article, I present a high-level overview of a modular architecture for trustless cross-chain messaging, emphasizing composability, zk-proof integration, and stateless actor roles."
 tags: ["interoperability", "consensus", "interchain-oracles", "overview"]
 category: "Blog"
@@ -10,7 +10,7 @@ image: ""
 
 ___
 
-[In our previous article](https://axialabsresearch.github.io/previous_article), we discussed why current cross-chain infrastructure is fundamentally broken and briefly introduced Frostgate as a new architectural approach aimed at solving this problem. In this article, we dive into the not-too-technical details: **how does Frostgate actually work, and why do zero-knowledge proofs make trustless interoperability possible?**
+[In our previous article](https://axialabsresearch.github.io/article/beyond-bridges), we discussed why current cross-chain infrastructure is fundamentally broken and briefly introduced Frostgate as a new architectural approach aimed at solving this problem. In this article, we dive into the not-too-technical details: **how does Frostgate actually work, and why do zero-knowledge proofs make trustless interoperability possible?**
 
 Understanding Frostgate boils down to understanding a key insight: **cross-chain communication is fundamentally a problem of authenticated message-passing between distributed systems that don't trust each other.**
 
