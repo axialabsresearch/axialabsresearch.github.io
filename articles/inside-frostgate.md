@@ -2,7 +2,7 @@
 title: "How Frostgate Works"
 author: "Blessed Tosin Oyinbo"
 date: "2025-07-19"
-description: "In this article, I present a high-level overview of a modular architecture for trustless cross-chain messaging, emphasizing composability, zk-proof integration, and stateless actor roles."
+description: "In this article, I explore how Frostgate replaces bridge validators and light clients with mathematical proofs, enabling trustless cross-chain interoperability through zero-knowledge and modular design"
 tags: ["interoperability", "consensus", "interchain-oracles", "overview"]
 category: "Blog"
 image: ""
