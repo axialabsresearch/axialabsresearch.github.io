@@ -1,5 +1,5 @@
 ---
-title: "Inside Frostgate: How Zero-Knowledge Proofs Enable Trustless Interoperability"
+title: "How Frostgate Works"
 author: "Blessed Tosin Oyinbo"
 date: "2025-07-19"
 description: "In this article, I present a high-level overview of a modular architecture for trustless cross-chain messaging, emphasizing composability, zk-proof integration, and stateless actor roles."
