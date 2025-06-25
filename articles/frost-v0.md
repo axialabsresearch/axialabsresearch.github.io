@@ -1,7 +1,7 @@
 ---
-title: "Say Hello to FROST v0"
+title: "FROST v0"
 author: "Blessed Tosin Oyinbo"
-date: "2025-06-25"
+date: "2025-07-23"
 description: "This blog post introduces FROST v0, the foundational infrastructure layer that enables Frostgate to operate across heterogeneous blockchain ecosystems. This release provides the essential networking, finality verification, and state management components required for practical deployment of succinct state validation systems."
 tags: ["infrastructure", "networking", "finality", "blockchain"]
 category: "Blog"
